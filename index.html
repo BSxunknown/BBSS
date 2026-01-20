@@ -18,7 +18,8 @@ body{
     font-family:'Poppins',sans-serif;
     overflow:hidden;
 
-    background: linear-gradient(120deg,#020024,#090979,#87CEFA,#090979,#020024);
+    /* Light Blue Background */
+    background: linear-gradient(120deg,#020024,#090979,#ADD8E6,#090979,#020024);
     background-size:500% 500%;
     animation:bgMove 18s ease infinite;
 
@@ -63,11 +64,11 @@ body{
   border-radius:50%;
   animation:bubbleRise linear infinite;
 }
-.bubble:nth-child(1){ left:10%; width:120px; height:120px; animation-duration:20s; background: rgba(255,255,255,0.12);}
-.bubble:nth-child(2){ left:30%; width:80px; height:80px; animation-duration:15s; background: rgba(0,255,255,0.15);}
-.bubble:nth-child(3){ left:50%; width:100px; height:100px; animation-duration:22s; background: rgba(128,0,255,0.1);}
-.bubble:nth-child(4){ left:70%; width:70px; height:70px; animation-duration:18s; background: rgba(255,0,255,0.12);}
-.bubble:nth-child(5){ left:85%; width:140px; height:140px; animation-duration:25s; background: rgba(0,128,255,0.1);}
+.bubble:nth-child(1){ left:10%; width:120px; height:120px; animation-duration:20s; background: rgba(255,255,255,0.05);}
+.bubble:nth-child(2){ left:30%; width:80px; height:80px; animation-duration:15s; background: rgba(0,255,255,0.08);}
+.bubble:nth-child(3){ left:50%; width:100px; height:100px; animation-duration:22s; background: rgba(128,0,255,0.05);}
+.bubble:nth-child(4){ left:70%; width:70px; height:70px; animation-duration:18s; background: rgba(255,0,255,0.05);}
+.bubble:nth-child(5){ left:85%; width:140px; height:140px; animation-duration:25s; background: rgba(0,128,255,0.05);}
 
 @keyframes bubbleRise{
   0%{ transform: translateY(0) scale(1);}
@@ -88,7 +89,7 @@ body{
     box-shadow:0 25px 60px rgba(0,0,0,.7);
     animation:pop .8s ease;
 
-    /* ===== NEW NEON CARD ANIMATION (Purple + Cyan) ===== */
+    /* Neon Card Animation (Purple + Cyan) */
     background: linear-gradient(135deg, #8000ff, #ff00ff, #8000ff);
     background-size: 300% 300%;
     animation:cardBG 6s ease infinite, cardFloat 4s ease-in-out infinite alternate, cardPulse 2s ease-in-out infinite;
@@ -260,315 +261,6 @@ p{
     const channel="aHR0cHM6Ly95b3V0dWJlLmNvbS9AbHlyaWNhbHZpYmV6b25seS1zOGQ=";
     document.getElementById("go").onclick=()=>{ location.href=atob(channel); };
     document.getElementById("shorts").onclick=()=>{ location.href="https://youtube.com/shorts/CEAxUNL9xV0"; };
-})();
-</script>
-
-</body>
-</html>    0%{transform:translateY(-40px);}
-    100%{transform:translateY(40px);}
-}
-
-/* ===== CARD ===== */
-.card{
-    position:relative;
-    width:360px;
-    padding:30px;
-    border-radius:25px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.25);
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.8),
-        inset 0 0 30px rgba(255,255,255,.05);
-    text-align:center;
-    color:#fff;
-    animation:pop .9s ease;
-    margin-bottom:25px;
-}
-@keyframes pop{
-    0%{transform:scale(.8);opacity:0}
-    100%{transform:scale(1);opacity:1}
-}
-
-/* ===== AVATAR IMAGE ===== */
-.avatar{
-    width:130px;
-    height:130px;
-    margin:auto;
-    border-radius:50%;
-    padding:5px;
-    background:linear-gradient(135deg,#ff004c,#ff9900,#00e0ff);
-    animation:rotate 6s linear infinite;
-}
-@keyframes rotate{
-    0%{filter:hue-rotate(0deg);}
-    100%{filter:hue-rotate(360deg);}
-}
-.avatar img{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #000;
-}
-
-/* ===== TEXT ===== */
-h2{
-    margin-top:20px;
-    font-size:28px;
-    letter-spacing:1px;
-}
-p{
-    margin:12px 0 25px;
-    font-size:16px;
-    color:#ddd;
-    line-height:1.6;
-}
-
-/* ===== BUTTON ===== */
-.btn{
-    position:relative;
-    padding:15px 38px;
-    font-size:17px;
-    font-weight:600;
-    color:#000;
-    background:#fff;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    overflow:hidden;
-    transition:.4s;
-    margin-bottom:10px;
-}
-.btn::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg,#ff004c,#ff9900,#00e0ff);
-    opacity:0;
-    transition:.4s;
-}
-.btn:hover::before{opacity:1}
-.btn span{position:relative;z-index:1}
-.btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(255,255,255,.8)}
-
-/* ===== FOOTER ===== */
-.small{
-    margin-top:18px;
-    font-size:13px;
-    color:#aaa;
-    opacity:.8;
-}
-
-/* ===== SHORTS CARD ===== */
-.shorts-card{
-    width:360px;
-    padding:20px;
-    border-radius:20px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(16px);
-    border:1px solid rgba(255,255,255,.25);
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.6),
-        inset 0 0 20px rgba(255,255,255,.05);
-    text-align:center;
-    color:#fff;
-    animation:pop .9s ease;
-}
-.shorts-card h3{
-    font-size:22px;
-    color:#ffffff;
-    margin-bottom:15px;
-}
-.shorts-btn{
-    position:relative;
-    padding:12px 30px;
-    font-size:16px;
-    font-weight:600;
-    color:#000;
-    background:#fff;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    overflow:hidden;
-    transition:.4s;
-}
-.shorts-btn::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg,#ff004c,#ff9900,#00e0ff);
-    opacity:0;
-    transition:.4s;
-}
-.shorts-btn span{position:relative;z-index:1}
-.shorts-btn:hover::before{opacity:1}
-.shorts-btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(255,255,255,.8);}
-</style>
-</head>
-
-<body>
-
-<div class="bg-glow"></div>
-
-<!-- MAIN CHANNEL CARD -->
-<div class="card">
-    <div class="avatar">
-        <img src="https://i.ibb.co/Z1t6x0fQ/images.jpg" alt="Virat Kohli">
-    </div>
-
-    <h2>Bharat Sharma</h2>
-    <p>Big Virat Kohli fan 🏏<br>Music • Vibes • Emotions ✨</p>
-
-    <button class="btn" id="go">
-        <span>Visit Channel 🚀</span>
-    </button>
-
-    <div class="small">Tap & feel the vibe</div>
-</div>
-
-<!-- SHORTS CARD -->
-<div class="shorts-card">
-    <h3>Latest Shorts</h3>
-    <button class="shorts-btn" id="shorts">
-        <span>Click here to watch 🚀</span>
-    </button>
-</div>
-
-<script>
-(function(){
-    // Channel link
-    const _x="aHR0cHM6Ly95b3V0dWJlLmNvbS9AbHlyaWNhbHZpYmV6b25seS1zOGQ/c2k9S2UwcmNxS2RSQVItSVhQSg==";
-    const _d=(s)=>atob(s);
-    document.getElementById("go").onclick=()=>{
-        window.location.href=_d(_x);
-    };
-
-    // Shorts link
-    document.getElementById("shorts").onclick=()=>{
-        window.location.href="https://youtube.com/shorts/CEAxUNL9xV0?si=2B0cxQ4eth1QOUh";
-    };
-})();
-</script>
-
-</body>
-        </html>.card{
-    position:relative;
-    width:360px;
-    padding:30px;
-    border-radius:25px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.25);
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.8),
-        inset 0 0 30px rgba(255,255,255,.05);
-    text-align:center;
-    color:#fff;
-    animation:pop .9s ease;
-}
-@keyframes pop{
-    0%{transform:scale(.8);opacity:0}
-    100%{transform:scale(1);opacity:1}
-}
-
-/* ===== AVATAR IMAGE ===== */
-.avatar{
-    width:130px;
-    height:130px;
-    margin:auto;
-    border-radius:50%;
-    padding:5px;
-    background:linear-gradient(135deg,#ff004c,#ff9900,#00e0ff);
-    animation:rotate 6s linear infinite;
-}
-@keyframes rotate{
-    0%{filter:hue-rotate(0deg);}
-    100%{filter:hue-rotate(360deg);}
-}
-.avatar img{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #000;
-}
-
-/* ===== TEXT ===== */
-h2{
-    margin-top:20px;
-    font-size:28px;
-    letter-spacing:1px;
-}
-p{
-    margin:12px 0 25px;
-    font-size:16px;
-    color:#ddd;
-    line-height:1.6;
-}
-
-/* ===== BUTTON ===== */
-.btn{
-    position:relative;
-    padding:15px 38px;
-    font-size:17px;
-    font-weight:600;
-    color:#000;
-    background:#fff;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    overflow:hidden;
-    transition:.4s;
-}
-.btn::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg,#ff004c,#ff9900,#00e0ff);
-    opacity:0;
-    transition:.4s;
-}
-.btn:hover::before{opacity:1}
-.btn span{position:relative;z-index:1}
-.btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(255,255,255,.8)}
-
-/* ===== FOOTER ===== */
-.small{
-    margin-top:18px;
-    font-size:13px;
-    color:#aaa;
-    opacity:.8;
-}
-</style>
-</head>
-
-<body>
-
-<div class="bg-glow"></div>
-
-<div class="card">
-    <div class="avatar">
-        <img src="https://i.ibb.co/Z1t6x0fQ/images.jpg" alt="Virat Kohli">
-    </div>
-
-    <h2>Bharat Sharma</h2>
-    <p>Big Virat Kohli fan 🏏<br>Music • Vibes • Emotions ✨</p>
-
-    <button class="btn" id="go">
-        <span>Visit Channel 🚀</span>
-    </button>
-
-    <div class="small">Tap & feel the vibe</div>
-</div>
-
-<script>
-(function(){
-    const _x="aHR0cHM6Ly95b3V0dWJlLmNvbS9AbHlyaWNhbHZpYmV6b25seS1zOGQ/c2k9S2UwcmNxS2RSQVItSVhQSg==";
-    const _d=(s)=>atob(s);
-    document.getElementById("go").onclick=()=>{
-        window.location.href=_d(_x);
-    };
 })();
 </script>
 
