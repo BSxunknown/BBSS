@@ -820,4 +820,100 @@ body {
         <button class="btn-primary" id="channelBtn">
             <span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 4.01c0-1.09-.89-1.98-
+                    <path d="M22 4.01c0-1.09-.89-1.98-1.99-1.98H4c-1.1 0-2 .89-2 1.98v15.98c0 1.1.9 1.98 2 1.98h16.01c1.1 0 1.99-.88 1.99-1.98V4.01zM9.68 14.89V9.11l5.46 2.89-5.46 2.89z"/>
+                </svg>
+                Visit Channel
+            </span>
+        </button>
+    </div>
+
+    <!-- Shorts Card -->
+    <div class="shorts-card">
+        <div class="shorts-header">
+            <h2 class="shorts-title">Latest Shorts</h2>
+            <p class="shorts-subtitle">Watch trending content now</p>
+        </div>
+        <button class="btn-secondary" id="shortsBtn">
+            <span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Watch Now
+            </span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Made with ❤️ for music lovers</p>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+    
+    // Channel and Shorts URLs (encoded)
+    const channelURL = "aHR0cHM6Ly95b3V0dWJlLmNvbS9AbHlyaWNhbHZpYmV6b25seS1zOGQ=";
+    const shortsURL = "https://youtube.com/shorts/NtRWsvWWJyc?si=RRHIG59_j46hR1Bg";
+    
+    // Button click handlers
+    const channelBtn = document.getElementById('channelBtn');
+    const shortsBtn = document.getElementById('shortsBtn');
+    
+    if (channelBtn) {
+        channelBtn.addEventListener('click', function() {
+            try {
+                window.location.href = atob(channelURL);
+            } catch (e) {
+                console.error('Navigation error:', e);
+            }
+        });
+    }
+    
+    if (shortsBtn) {
+        shortsBtn.addEventListener('click', function() {
+            try {
+                window.location.href = shortsURL;
+            } catch (e) {
+                console.error('Navigation error:', e);
+            }
+        });
+    }
+    
+    // Add parallax effect to bubbles on mouse move
+    document.addEventListener('mousemove', function(e) {
+        const bubbles = document.querySelectorAll('.bubble');
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        bubbles.forEach((bubble, index) => {
+            const speed = (index + 1) * 0.5;
+            const x = (mouseX - 0.5) * speed * 20;
+            const y = (mouseY - 0.5) * speed * 20;
+            bubble.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    });
+    
+    // Add touch feedback for mobile
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    buttons.forEach(button => {
+        button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        button.addEventListener('touchend', function() {
+            this.style.transform = '';
+        });
+    });
+    
+    // Smooth reveal animation on load
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '1';
+    });
+    
+})();
+</script>
+
+</body>
+</html>
